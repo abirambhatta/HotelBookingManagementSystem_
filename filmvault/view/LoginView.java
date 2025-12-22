@@ -152,7 +152,7 @@ public class LoginView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ForgotPasswordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LoginButton)
                     .addComponent(SignUpButton))
                 .addContainerGap(66, Short.MAX_VALUE))
@@ -200,17 +200,15 @@ public class LoginView extends javax.swing.JFrame {
 
     private void ForgotPasswordButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgotPasswordButtonMouseEntered
         // TODO add your handling code here:
-        ForgotPasswordButton.setText("<html><u>Forgot password?</u></html>");
     }//GEN-LAST:event_ForgotPasswordButtonMouseEntered
 
     private void ForgotPasswordButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgotPasswordButtonMouseExited
         // TODO add your handling code here:
-        ForgotPasswordButton.setText("<html>Forgot password?</html>");
     }//GEN-LAST:event_ForgotPasswordButtonMouseExited
 
     private void ForgotPasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgotPasswordButtonActionPerformed
         // TODO add your handling code here:
-
+        
     }//GEN-LAST:event_ForgotPasswordButtonActionPerformed
 
     private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed

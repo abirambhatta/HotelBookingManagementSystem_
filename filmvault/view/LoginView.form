@@ -133,7 +133,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="ForgotPasswordButton" min="-2" pref="22" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="LoginButton" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="SignUpButton" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
