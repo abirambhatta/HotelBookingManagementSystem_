@@ -184,55 +184,10 @@ public class LoginView extends javax.swing.JFrame {
     public javax.swing.JToggleButton getForgotPasswordButton() {
         return ForgotPasswordButton;
     }
-
-     private void performLogin() {
-        String email = EmailTextField.getText().trim();
-        String password = new String(PasswordPasswordField.getPassword());
-
-        if (email.isEmpty() || password.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Email and Password are required!", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
-        if (!email.contains("@") || !email.contains(".")) {
-            JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Temporary success message (replace later with real authentication and opening main app)
-        JOptionPane.showMessageDialog(this, "Login Successful!\nWelcome " + email, "Success", JOptionPane.INFORMATION_MESSAGE);
-    }
-     
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                LoginView view = new LoginView();
-                new filmvault.controller.LoginController(view);
-                view.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel EmailLabel;
