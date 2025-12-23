@@ -4,6 +4,8 @@
  */
 package filmvault.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lenovo
@@ -96,6 +98,11 @@ public class SignUpView extends javax.swing.JFrame {
         SignUpButton1.setForeground(new java.awt.Color(255, 255, 255));
         SignUpButton1.setText("Sign Up");
         SignUpButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SignUpButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignUpButton1ActionPerformed(evt);
+            }
+        });
 
         EmailTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
@@ -213,6 +220,46 @@ public class SignUpView extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BackToLoginButtonActionPerformed
 
+    private void SignUpButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButton1ActionPerformed
+        // TODO add your handling code here:
+        performSignUp();
+    }//GEN-LAST:event_SignUpButton1ActionPerformed
+
+    private void performSignUp() {
+        String username = UsernameTextField.getText().trim();
+        String email = EmailTextField1.getText().trim();
+        String password = new String(PasswordPasswordField1.getPassword());
+        String confirmPassword = new String(ConfirmPasswordPasswordField.getPassword());
+
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "All fields are required!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (username.length() < 3) {
+            JOptionPane.showMessageDialog(this, "Username must be at least 3 characters long.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!email.contains("@") || !email.contains(".")) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (password.length() < 6) {
+            JOptionPane.showMessageDialog(this, "Password must be at least 6 characters long.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            JOptionPane.showMessageDialog(this, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Temporary success (later connect to real registration)
+        JOptionPane.showMessageDialog(this, "Registration Successful!\nYou can now login with username: " + username, "Success", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
     /**
      * @param args the command line arguments
      */

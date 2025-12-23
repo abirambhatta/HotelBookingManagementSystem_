@@ -4,6 +4,8 @@
  */
 package filmvault.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lenovo
@@ -94,6 +96,11 @@ public class LoginView extends javax.swing.JFrame {
         LoginButton.setForeground(new java.awt.Color(255, 255, 255));
         LoginButton.setText("Login");
         LoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
+            }
+        });
 
         SignUpButton.setBackground(new java.awt.Color(0, 0, 0));
         SignUpButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -218,6 +225,29 @@ public class LoginView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordPasswordFieldActionPerformed
 
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+        // TODO add your handling code here:
+        performLogin();
+    }//GEN-LAST:event_LoginButtonActionPerformed
+
+     private void performLogin() {
+        String email = EmailTextField.getText().trim();
+        String password = new String(PasswordPasswordField.getPassword());
+
+        if (email.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Email and Password are required!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (!email.contains("@") || !email.contains(".")) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Temporary success message (replace later with real authentication and opening main app)
+        JOptionPane.showMessageDialog(this, "Login Successful!\nWelcome " + email, "Success", JOptionPane.INFORMATION_MESSAGE);
+    }
+     
     /**
      * @param args the command line arguments
      */
