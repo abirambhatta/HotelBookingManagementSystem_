@@ -58,11 +58,6 @@ public class SignUpView extends javax.swing.JFrame {
         SingUpLabelHeader.setText("Sign Up");
 
         UsernameTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
-        UsernameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsernameTextFieldActionPerformed(evt);
-            }
-        });
 
         UsernameLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         UsernameLabel.setForeground(new java.awt.Color(0, 0, 0));
@@ -79,30 +74,12 @@ public class SignUpView extends javax.swing.JFrame {
         BackToLoginButton.setBorder(null);
         BackToLoginButton.setContentAreaFilled(false);
         BackToLoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BackToLoginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BackToLoginButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BackToLoginButtonMouseExited(evt);
-            }
-        });
-        BackToLoginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackToLoginButtonActionPerformed(evt);
-            }
-        });
 
         SignUpButton1.setBackground(new java.awt.Color(0, 0, 0));
         SignUpButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         SignUpButton1.setForeground(new java.awt.Color(255, 255, 255));
         SignUpButton1.setText("Sign Up");
         SignUpButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        SignUpButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignUpButton1ActionPerformed(evt);
-            }
-        });
 
         EmailTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
@@ -200,30 +177,6 @@ public class SignUpView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void UsernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UsernameTextFieldActionPerformed
-
-    private void BackToLoginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToLoginButtonMouseEntered
-        // TODO add your handling code here:
-        BackToLoginButton.setText("<html><u>Back To Login?</u></html>");
-    }//GEN-LAST:event_BackToLoginButtonMouseEntered
-
-    private void BackToLoginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToLoginButtonMouseExited
-        // TODO add your handling code here:
-        BackToLoginButton.setText("<html>Back TO Login</html>");
-    }//GEN-LAST:event_BackToLoginButtonMouseExited
-
-    private void BackToLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToLoginButtonActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_BackToLoginButtonActionPerformed
-
-    private void SignUpButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButton1ActionPerformed
-        // TODO add your handling code here:
-        performSignUp();
-    }//GEN-LAST:event_SignUpButton1ActionPerformed
 
     private void performSignUp() {
         String username = UsernameTextField.getText().trim();

@@ -71,19 +71,6 @@ public class ForgotPasswordView extends javax.swing.JFrame {
         BackToLoginButton1.setBorder(null);
         BackToLoginButton1.setContentAreaFilled(false);
         BackToLoginButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BackToLoginButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BackToLoginButton1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BackToLoginButton1MouseExited(evt);
-            }
-        });
-        BackToLoginButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackToLoginButton1ActionPerformed(evt);
-            }
-        });
 
         RestPasswordButton.setBackground(new java.awt.Color(0, 0, 0));
         RestPasswordButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -184,20 +171,6 @@ public class ForgotPasswordView extends javax.swing.JFrame {
     private void EmailTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EmailTextField3ActionPerformed
-
-    private void BackToLoginButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToLoginButton1MouseEntered
-        // TODO add your handling code here:
-        BackToLoginButton1.setText("<html><u>Back To Login</u></html>");
-    }//GEN-LAST:event_BackToLoginButton1MouseEntered
-
-    private void BackToLoginButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToLoginButton1MouseExited
-        // TODO add your handling code here:
-        BackToLoginButton1.setText("<html>Back TO Login</html>");
-    }//GEN-LAST:event_BackToLoginButton1MouseExited
-
-    private void BackToLoginButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToLoginButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BackToLoginButton1ActionPerformed
 
     /**
      * @param args the command line arguments

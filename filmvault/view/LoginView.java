@@ -56,11 +56,6 @@ public class LoginView extends javax.swing.JFrame {
         LoginTextHeader.setText("Login");
 
         EmailTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
-        EmailTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EmailTextFieldActionPerformed(evt);
-            }
-        });
 
         EmailLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         EmailLabel.setForeground(new java.awt.Color(0, 0, 0));
@@ -77,48 +72,20 @@ public class LoginView extends javax.swing.JFrame {
         ForgotPasswordButton.setContentAreaFilled(false);
         ForgotPasswordButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ForgotPasswordButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        ForgotPasswordButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ForgotPasswordButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                ForgotPasswordButtonMouseExited(evt);
-            }
-        });
-        ForgotPasswordButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ForgotPasswordButtonActionPerformed(evt);
-            }
-        });
 
         LoginButton.setBackground(new java.awt.Color(0, 0, 0));
         LoginButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LoginButton.setForeground(new java.awt.Color(255, 255, 255));
         LoginButton.setText("Login");
         LoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LoginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LoginButtonActionPerformed(evt);
-            }
-        });
 
         SignUpButton.setBackground(new java.awt.Color(0, 0, 0));
         SignUpButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         SignUpButton.setForeground(new java.awt.Color(255, 255, 255));
         SignUpButton.setText("Sign Up");
         SignUpButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        SignUpButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SignUpButtonActionPerformed(evt);
-            }
-        });
 
         PasswordPasswordField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
-        PasswordPasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordPasswordFieldActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -197,38 +164,6 @@ public class LoginView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EmailTextFieldActionPerformed
-
-    private void ForgotPasswordButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgotPasswordButtonMouseEntered
-        // TODO add your handling code here:
-        ForgotPasswordButton.setText("<html><u>Forgot password?</u></html>");
-    }//GEN-LAST:event_ForgotPasswordButtonMouseEntered
-
-    private void ForgotPasswordButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ForgotPasswordButtonMouseExited
-        // TODO add your handling code here:
-        ForgotPasswordButton.setText("<html>Forgot password?</html>");
-    }//GEN-LAST:event_ForgotPasswordButtonMouseExited
-
-    private void ForgotPasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ForgotPasswordButtonActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_ForgotPasswordButtonActionPerformed
-
-    private void SignUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SignUpButtonActionPerformed
-
-    private void PasswordPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordPasswordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordPasswordFieldActionPerformed
-
-    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-        // TODO add your handling code here:
-        performLogin();
-    }//GEN-LAST:event_LoginButtonActionPerformed
 
      private void performLogin() {
         String email = EmailTextField.getText().trim();
