@@ -31,11 +31,11 @@ public class ForgotPasswordView extends javax.swing.JFrame {
         EmailTextField3 = new javax.swing.JTextField();
         EmailLabel3 = new javax.swing.JLabel();
         BackToLoginButton1 = new javax.swing.JToggleButton();
-        RestPasswordButton = new javax.swing.JToggleButton();
         PasswordLabel1 = new javax.swing.JLabel();
         NewPasswordPasswordField = new javax.swing.JPasswordField();
         ConfirmPasswordField1 = new javax.swing.JLabel();
         ConfirmPasswordPasswordField1 = new javax.swing.JPasswordField();
+        ResetPasswordButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,12 +69,6 @@ public class ForgotPasswordView extends javax.swing.JFrame {
         BackToLoginButton1.setContentAreaFilled(false);
         BackToLoginButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        RestPasswordButton.setBackground(new java.awt.Color(255, 153, 102));
-        RestPasswordButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        RestPasswordButton.setForeground(new java.awt.Color(255, 255, 255));
-        RestPasswordButton.setText("Reset Password");
-        RestPasswordButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         PasswordLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         PasswordLabel1.setForeground(new java.awt.Color(0, 0, 0));
         PasswordLabel1.setText("New Password:");
@@ -87,6 +81,17 @@ public class ForgotPasswordView extends javax.swing.JFrame {
 
         ConfirmPasswordPasswordField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
 
+        ResetPasswordButton.setBackground(new java.awt.Color(255, 153, 102));
+        ResetPasswordButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ResetPasswordButton.setForeground(new java.awt.Color(255, 255, 255));
+        ResetPasswordButton.setText("Reset Password");
+        ResetPasswordButton.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        ResetPasswordButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResetPasswordButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -94,14 +99,14 @@ public class ForgotPasswordView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(86, 86, 86)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ResetPasswordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BackToLoginButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(EmailTextField3)
+                        .addComponent(EmailTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                         .addComponent(EmailLabel3)
                         .addComponent(NewPasswordPasswordField)
                         .addComponent(ConfirmPasswordField1)
                         .addComponent(ConfirmPasswordPasswordField1)
-                        .addComponent(RestPasswordButton, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                         .addComponent(PasswordLabel1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(SingUpLabelHeader)
@@ -127,9 +132,9 @@ public class ForgotPasswordView extends javax.swing.JFrame {
                 .addComponent(ConfirmPasswordPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(BackToLoginButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RestPasswordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ResetPasswordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -176,8 +181,8 @@ public class ForgotPasswordView extends javax.swing.JFrame {
         return new String(ConfirmPasswordPasswordField1.getPassword());
     }
 
-    public javax.swing.JToggleButton getResetButton() {
-        return RestPasswordButton;
+    public javax.swing.JButton getResetButton() {
+        return ResetPasswordButton;
     }
 
     public javax.swing.JToggleButton getBackButton() {
@@ -188,6 +193,10 @@ public class ForgotPasswordView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EmailTextField3ActionPerformed
 
+    private void ResetPasswordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetPasswordButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResetPasswordButtonActionPerformed
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BackToLoginButton1;
@@ -197,7 +206,7 @@ public class ForgotPasswordView extends javax.swing.JFrame {
     private javax.swing.JTextField EmailTextField3;
     private javax.swing.JPasswordField NewPasswordPasswordField;
     private javax.swing.JLabel PasswordLabel1;
-    private javax.swing.JToggleButton RestPasswordButton;
+    private javax.swing.JButton ResetPasswordButton;
     private javax.swing.JLabel SingUpLabelHeader;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

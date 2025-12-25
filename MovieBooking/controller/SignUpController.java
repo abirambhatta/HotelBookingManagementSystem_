@@ -3,6 +3,7 @@ package MovieBooking.controller;
 import javax.swing.JOptionPane;
 
 import MovieBooking.model.validation;
+import MovieBooking.model.User;
 import MovieBooking.view.LoginView;
 import MovieBooking.view.SignUpView;
 
@@ -59,8 +60,19 @@ public class SignUpController {
             return;
         }
 
-        JOptionPane.showMessageDialog(view, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
-        backToLogin();
+        // Check if user already exists
+        if (User.userExists(username, email)) {
+            JOptionPane.showMessageDialog(view, "Username or Email already exists!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Save user to file
+        if (User.saveUser(username, email, password)) {
+            JOptionPane.showMessageDialog(view, "Registration successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            backToLogin();
+        } else {
+            JOptionPane.showMessageDialog(view, "Registration failed! Please try again.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     // Return to login form

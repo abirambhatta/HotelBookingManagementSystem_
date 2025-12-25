@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import MovieBooking.model.validation;
 import MovieBooking.model.Admin;
+import MovieBooking.model.User;
 import MovieBooking.view.ForgotPasswordView;
 import MovieBooking.view.LoginView;
 import MovieBooking.view.SignUpView;
@@ -69,9 +70,11 @@ public class LoginController {
         if (Admin.isAdmin(identifier, password)) {
             JOptionPane.showMessageDialog(view, "Admin Login Successful!\nWelcome Administrator", "Admin Access", JOptionPane.INFORMATION_MESSAGE);
             // TODO: Open admin dashboard
-        } else {
+        } else if (User.authenticateUser(identifier, password)) {
             JOptionPane.showMessageDialog(view, "User Login Successful!\nWelcome " + identifier, "Success", JOptionPane.INFORMATION_MESSAGE);
             // TODO: Open user dashboard
+        } else {
+            JOptionPane.showMessageDialog(view, "Invalid credentials!", "Login Failed", JOptionPane.ERROR_MESSAGE);
         }
     }
 
