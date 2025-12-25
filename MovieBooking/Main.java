@@ -1,17 +1,18 @@
 package MovieBooking;
 
-import MovieBooking.controller.LoginController;
-import MovieBooking.view.LoginView;
+import MovieBooking.controller.AuthenticationController;
+import MovieBooking.view.AuthenticationView;
 
 /**
  * Main class - Entry point for Movie Booking Management System
- * Starts the application with Login screen
+ * Starts the application with Authentication screen using CardLayout
  */
 public class Main {
     public static void main(String[] args) {
-        // Start application with login screen
-        LoginView loginView = new LoginView();
-        new LoginController(loginView);
-        loginView.setVisible(true);
+        
+        // Start application with authentication screen
+        AuthenticationView authView = new AuthenticationView();
+        new AuthenticationController(authView);
+        authView.setVisible(true);
     }
 }
