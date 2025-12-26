@@ -1,3 +1,4 @@
+
 package MovieBooking.controller;
 
 import javax.swing.JOptionPane;
@@ -9,7 +10,8 @@ import MovieBooking.model.validation;
 import MovieBooking.model.Admin;
 import MovieBooking.model.User;
 import MovieBooking.view.AuthenticationView;
-import MovieBooking.view.AdminView;
+import MovieBooking.view.MovieBookingView;
+import MovieBooking.controller.AdminController;
 
 /**
  * AuthenticationController handles all authentication with CardLayout
@@ -110,10 +112,10 @@ public class AuthenticationController {
         // Check if admin login
         if (Admin.isAdmin(identifier, password)) {
             JOptionPane.showMessageDialog(view, "Admin Login Successful!\nWelcome Administrator", "Admin Access", JOptionPane.INFORMATION_MESSAGE);
-            // Open admin dashboard
             view.dispose();
-            AdminView adminView = new AdminView();
-            adminView.setVisible(true);
+            MovieBookingView movieBookingView = new MovieBookingView();
+            new AdminController(movieBookingView);
+            movieBookingView.setVisible(true);
         } else if (User.authenticateUser(identifier, password)) {
             JOptionPane.showMessageDialog(view, "User Login Successful!\nWelcome " + identifier, "Success", JOptionPane.INFORMATION_MESSAGE);
             // TODO: Open user dashboard
