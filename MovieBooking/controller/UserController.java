@@ -135,19 +135,39 @@ public class UserController {
      */
     private void setupPageButtons(javax.swing.JButton homeBtn, javax.swing.JButton moviesBtn,
             javax.swing.JButton bookingBtn, javax.swing.JButton profileBtn, javax.swing.JButton logoutBtn) {
-        homeBtn.addActionListener(e -> showUserHome());
+        homeBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showUserHome();
+            }
+        });
         addButtonHoverListeners(homeBtn);
 
-        moviesBtn.addActionListener(e -> showBrowseMovies());
+        moviesBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showBrowseMovies();
+            }
+        });
         addButtonHoverListeners(moviesBtn);
 
-        bookingBtn.addActionListener(e -> showMyBooking());
+        bookingBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showMyBooking();
+            }
+        });
         addButtonHoverListeners(bookingBtn);
 
-        profileBtn.addActionListener(e -> showProfile());
+        profileBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showProfile();
+            }
+        });
         addButtonHoverListeners(profileBtn);
 
-        logoutBtn.addActionListener(e -> performLogout());
+        logoutBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                performLogout();
+            }
+        });
     }
 
     /**
@@ -564,17 +584,25 @@ public class UserController {
      */
     private void initSearchAndFilters() {
         // Search button click starts filtering
-        view.getSearchButton().addActionListener(e -> handleFiltering());
-
-        // Dropdown selection triggers filtering immediately
-        view.getFilterGenre().addActionListener(e -> {
-            if (!isPopulatingFilters)
+        view.getSearchButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
                 handleFiltering();
+            }
         });
 
-        view.getFilterLanguage().addActionListener(e -> {
-            if (!isPopulatingFilters)
-                handleFiltering();
+        // Dropdown selection triggers filtering immediately
+        view.getFilterGenre().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (!isPopulatingFilters)
+                    handleFiltering();
+            }
+        });
+
+        view.getFilterLanguage().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (!isPopulatingFilters)
+                    handleFiltering();
+            }
         });
     }
 
@@ -767,36 +795,62 @@ public class UserController {
                 view.getSeatD7(), view.getSeatD8()
         };
         for (javax.swing.JToggleButton seat : allSeats) {
-            seat.addActionListener(e -> handleSeatSelection(seat));
+            seat.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    handleSeatSelection(seat);
+                }
+            });
         }
 
         // 2. Show Time Listeners
         javax.swing.JToggleButton[] timeBtns = { view.getTimeBtn1(), view.getTimeBtn2(), view.getTimeBtn3(),
                 view.getTimeBtn4() };
         for (javax.swing.JToggleButton btn : timeBtns) {
-            btn.addActionListener(e -> handleTimeSelection(btn));
+            btn.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    handleTimeSelection(btn);
+                }
+            });
         }
 
-        view.getSeatTypeCombo().addActionListener(e -> updateTotalPrice());
+        view.getSeatTypeCombo().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                updateTotalPrice();
+            }
+        });
 
-        view.getCancelBookingButton().addActionListener(e -> view.getBookingDialog().setVisible(false));
+        view.getCancelBookingButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                view.getBookingDialog().setVisible(false);
+            }
+        });
 
         // 3. Date selection listeners
-        view.getTodayButton().addActionListener(e -> handleDateSelection(view.getTodayButton(), "Today"));
-        view.getTomorrowButton().addActionListener(e -> handleDateSelection(view.getTomorrowButton(), "Tomorrow"));
+        view.getTodayButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleDateSelection(view.getTodayButton(), "Today");
+            }
+        });
+        view.getTomorrowButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleDateSelection(view.getTomorrowButton(), "Tomorrow");
+            }
+        });
 
         // 4. "Generate Ticket" flow
-        view.getGenerateTicketButton().addActionListener(e -> {
-            if (selectedSeats.isEmpty() || selectedTimeBtn == null || selectedDate == null) {
-                JOptionPane.showMessageDialog(view.getBookingDialog(),
-                        "Please select seats, a time, and a date.",
-                        "Incomplete Selection", JOptionPane.WARNING_MESSAGE);
-                return;
+        view.getGenerateTicketButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (selectedSeats.isEmpty() || selectedTimeBtn == null || selectedDate == null) {
+                    JOptionPane.showMessageDialog(view.getBookingDialog(),
+                            "Please select seats, a time, and a date.",
+                            "Incomplete Selection", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+                populateTicket();
+                // Transition to Ticket Summary (card3)
+                java.awt.CardLayout cl = (java.awt.CardLayout) view.getBookingDialog().getContentPane().getLayout();
+                cl.show(view.getBookingDialog().getContentPane(), "card3");
             }
-            populateTicket();
-            // Transition to Ticket Summary (card3)
-            java.awt.CardLayout cl = (java.awt.CardLayout) view.getBookingDialog().getContentPane().getLayout();
-            cl.show(view.getBookingDialog().getContentPane(), "card3");
         });
     }
 
@@ -919,9 +973,21 @@ public class UserController {
     }
 
     private void initMyBookingListeners() {
-        view.getSearchButtonForMyBooking().addActionListener(e -> handleSearchMyBooking());
-        view.getSortByMovieNameButtonMyBooking().addActionListener(e -> handleSortMyBookingByName());
-        view.getSortByDateButtonMyBooking().addActionListener(e -> handleSortMyBookingByDate());
+        view.getSearchButtonForMyBooking().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleSearchMyBooking();
+            }
+        });
+        view.getSortByMovieNameButtonMyBooking().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleSortMyBookingByName();
+            }
+        });
+        view.getSortByDateButtonMyBooking().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleSortMyBookingByDate();
+            }
+        });
     }
 
     /**

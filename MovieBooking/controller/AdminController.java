@@ -106,34 +106,94 @@ public class AdminController {
      */
     private void initController() {
         // Navigation button event handlers
-        view.getHomeButton().addActionListener(e -> showHomeCard());
+        view.getHomeButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showHomeCard();
+            }
+        });
         addButtonHoverListeners(view.getHomeButton());
 
-        view.getMoviesButton().addActionListener(e -> showMoviesCard());
+        view.getMoviesButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showMoviesCard();
+            }
+        });
         addButtonHoverListeners(view.getMoviesButton());
 
-        view.getUsersButton().addActionListener(e -> showUsersCard());
+        view.getUsersButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showUsersCard();
+            }
+        });
         addButtonHoverListeners(view.getUsersButton());
 
-        view.getLogoutButton().addActionListener(e -> performLogout());
+        view.getLogoutButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                performLogout();
+            }
+        });
 
         // Movie CRUD operation button handlers
-        view.getAddButton().addActionListener(e -> addMovie());
-        view.getUpdateButton().addActionListener(e -> updateMovie());
-        view.getDeleteButton().addActionListener(e -> deleteMovie());
+        view.getAddButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addMovie();
+            }
+        });
+        view.getUpdateButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                updateMovie();
+            }
+        });
+        view.getDeleteButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                deleteMovie();
+            }
+        });
 
         // User Management Event Handlers
-        view.getSearchButtonUserAdmin().addActionListener(e -> handleSearchUser());
-        view.getSortByNameButton().addActionListener(e -> handleSortUser("Name"));
-        view.getSortByBookingButton().addActionListener(e -> handleSortUser("Booking"));
-        view.getSortByDateButton().addActionListener(e -> handleSortUser("Date"));
+        view.getSearchButtonUserAdmin().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleSearchUser();
+            }
+        });
+        view.getSortByNameButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleSortUser("Name");
+            }
+        });
+        view.getSortByBookingButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleSortUser("Booking");
+            }
+        });
+        view.getSortByDateButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleSortUser("Date");
+            }
+        });
 
-        view.getViewUserDetailButton().addActionListener(e -> handleViewUserDetail());
-        view.getBlockUnblockUserButton().addActionListener(e -> handleBlockUnblockUser());
-        view.getDeleteUserButton().addActionListener(e -> handleDeleteUser());
+        view.getViewUserDetailButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleViewUserDetail();
+            }
+        });
+        view.getBlockUnblockUserButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleBlockUnblockUser();
+            }
+        });
+        view.getDeleteUserButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                handleDeleteUser();
+            }
+        });
 
         /** Dialog control */
-        view.getUserDetailCloseButton().addActionListener(e -> view.getUserDetailDialog().dispose());
+        view.getUserDetailCloseButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                view.getUserDetailDialog().dispose();
+            }
+        });
     }
 
     /**
@@ -313,20 +373,24 @@ public class AdminController {
     }
 
     private void setupBrowseListener() {
-        view.getBrowseButton().addActionListener(e -> {
-            CardLayout cl = (CardLayout) view.getMovieDialog().getContentPane().getLayout();
-            cl.show(view.getMovieDialog().getContentPane(), "card3");
+        view.getBrowseButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cl = (CardLayout) view.getMovieDialog().getContentPane().getLayout();
+                cl.show(view.getMovieDialog().getContentPane(), "card3");
+            }
         });
     }
 
     private void setupFileChooserListener() {
-        view.getFileChooser().addActionListener(e -> {
-            if (e.getActionCommand().equals(javax.swing.JFileChooser.APPROVE_SELECTION)) {
-                String fileName = view.getFileChooser().getSelectedFile().getName();
-                view.getImageLabel().setText(fileName);
+        view.getFileChooser().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (e.getActionCommand().equals(javax.swing.JFileChooser.APPROVE_SELECTION)) {
+                    String fileName = view.getFileChooser().getSelectedFile().getName();
+                    view.getImageLabel().setText(fileName);
+                }
+                CardLayout cl = (CardLayout) view.getMovieDialog().getContentPane().getLayout();
+                cl.show(view.getMovieDialog().getContentPane(), "card2");
             }
-            CardLayout cl = (CardLayout) view.getMovieDialog().getContentPane().getLayout();
-            cl.show(view.getMovieDialog().getContentPane(), "card2");
         });
     }
 
@@ -336,7 +400,8 @@ public class AdminController {
      * @param movieToUpdate Existing movie object if updating, null if adding new.
      */
     private void setupSaveListener(Movie movieToUpdate) {
-        view.getSaveButton().addActionListener(e -> {
+        view.getSaveButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
             if (validateForm()) {
                 String imagePath = movieToUpdate != null ? movieToUpdate.getImagePath() : "";
 
@@ -374,11 +439,16 @@ public class AdminController {
                 loadMovieTable();
                 view.getMovieDialog().dispose();
             }
+            }
         });
     }
 
     private void setupCancelListener() {
-        view.getCancelButton().addActionListener(e -> view.getMovieDialog().dispose());
+        view.getCancelButton().addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                view.getMovieDialog().dispose();
+            }
+        });
     }
 
     /**
